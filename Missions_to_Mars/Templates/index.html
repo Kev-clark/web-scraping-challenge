@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <title>Missons to Mars</title>
+</head>
+<body>
+    <div class="container-fluid bg-gray" id="top">
+        <div class="jumbotron text-center">
+            <h1>Missions to Mars</h1>
+            <a class="btn btn-primary" href="/scrape" role="button"> Scrape New Data</a>
+        </div>
+        
+    </div>
+    <div class="container-fluid bg-" id="news">
+        <h2>{{marsdataset.news[0]}}</h2>
+        <div>{{marsdataset.news[1]}}</div>
+    </div>
+    <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm fluid">
+                    <p class="text-sm-left text-info font-weight-bolder" style="font-size:30px" >Featured Image of Mars</p>   
+                    <img src="{{marsdataset.MarsPic}}" alt="Mars featured image" />
+              <div></div>
+                  </div>
+              <div class="col-sm">
+                <div class="container-fluid">
+                <h2>Current Weather via Twitter:</h2>
+
+                <div>{{marsdataset.weather}}</div>
+                </div>
+                <div class="row">
+                <div class="col-sm">
+                <div class="container">
+                  <h2>Mars Facts:</h2>
+                  <html>{{marsdataset.facts_table | safe }}</html>
+                </div>
+                </div>    
+                </div>
+              </div>
+            </div>
+    </div>
+
+    <div class="container-fluid" id="fourpics">
+            <div class="col-sm-auto" id="left_container">
+                    <div class="container">
+                        <div class="row">
+                            <p class="text-sm-left text-info font-weight-bolder" style="font-size:30px" >Mars Hemispheres</p>
+                          </div>
+                        <div class="row">
+                            <div class="col-sm">
+                              <img src="{{marsdataset.MarsHems[0]['img_url']}}"  alt= "Hem 1" width="400" height="400">
+                              <div>{{marsdataset.MarsHems[0]['title']}}</div>
+                            </div>
+                    
+                            <div class="col-sm">
+                              <img src="{{marsdataset.MarsHems[1]['img_url']}}"  alt= "Hem 2" width="400" height="400">
+                              <div>{{marsdataset.MarsHems[1]['title']}}</div>
+                            </div>
+                            </div>
+                            <div class="row">
+                            
+                    
+                    <div class="col-sm">
+                        <img src="{{marsdataset.MarsHems[2]['img_url']}}"  alt= "Hem 3" width="400" height="400">
+                        <div>{{marsdataset.MarsHems[2]['title']}}</div>
+                    </div>
+                    
+                    <div class="col-sm">
+                        <img src="{{marsdataset.MarsHems[3]['img_url']}}"  alt= "Hem 4" height="400" width="400">
+                        <div>{{marsdataset.MarsHems[3]['title']}}</div>
+                        
+                        </div>
+                      </div>
+                   </div>
+                </div>
+    </div>
+</body>
+</html>
